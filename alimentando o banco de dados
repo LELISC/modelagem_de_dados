@@ -69,8 +69,25 @@ INSERT INTO `hospital`.`consultas` (`id_consultas`, `id_medico`, `id_paciente`, 
 INSERT INTO `hospital`.`consultas` (`id_consultas`, `id_medico`, `id_paciente`, `numero_carteira`, `diagnostico_paciente`, `id_receita`, `hora_inicio_consulta`, `hora_fim_consulta`) VALUES ('20', '10', '4', '31193676', 'gripe', '39', '10:15', '10:45');
 INSERT INTO `hospital`.`consultas` (`id_consultas`, `id_medico`, `id_paciente`, `numero_carteira`, `diagnostico_paciente`, `id_receita`, `hora_inicio_consulta`, `hora_fim_consulta`) VALUES ('21', '1', '5', '38961231', 'gripe', '40', '09:48', '10:48');
 
+
 // Incluindo menos quatro convênios médicos, associando ao menos a cinco pacientes e cinco consultas(a tabela clientes já possui um convenio atrelado a cada um deles).
 
 SELECT * from hospital.pacientes as b1
 left join hospital.consultas as b2
 on b1.id_paciente = b2.id_paciente
+
+
+// criando entidade de relazionamento entre médico e especialidade
+
+ALTER TABLE `hospital`.`medicos` 
+ADD INDEX `idespecialista_idx` (`id_especialista` ASC) VISIBLE;
+;
+ALTER TABLE `hospital`.`medicos` 
+ADD CONSTRAINT `idespecialista`
+  FOREIGN KEY (`id_especialista`)
+  REFERENCES `hospital`.`especialista` (`idespecialista`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+// criando entidade de relacionamento entre internação e enfermeiro e 
