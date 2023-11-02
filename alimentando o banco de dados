@@ -91,3 +91,40 @@ ADD CONSTRAINT `idespecialista`
 
 
 // criando entidade de relacionamento entre internação e enfermeiro e 
+
+ALTER TABLE `hospital`.`internacao` 
+ADD INDEX `idenfermeiro_idx` (`id_enfermeiro` ASC) VISIBLE;
+;
+ALTER TABLE `hospital`.`internacao` 
+ADD CONSTRAINT `idenfermeiro`
+  FOREIGN KEY (`id_enfermeiro`)
+  REFERENCES `hospital`.`enfermeiro` (`idenfermeiro`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+// arrumando chave estrangeira do relacionamento entre convenio e medico parte 1
+
+ALTER TABLE `hospital`.`convenios` 
+ADD COLUMN `id_medico` INT NULL AFTER `data_carencia_convenio`,
+ADD INDEX `idmedico_idx` (`id_medico` ASC) VISIBLE;
+;
+ALTER TABLE `hospital`.`convenios` 
+ADD CONSTRAINT `idmedico`
+  FOREIGN KEY (`id_medico`)
+  REFERENCES `hospital`.`medicos` (`idmedico`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+// criando entidade entre internação e enfermeiro.
+
+ALTER TABLE `hospital`.`internacao` 
+ADD CONSTRAINT `id_`
+  FOREIGN KEY (`id_enfermeiro`)
+  REFERENCES `hospital`.`enfermeiro` (`idenfermeiro`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+// Colocando chave estrangeira dentro da internação (Chaves Médico e Paciente).
+
+
