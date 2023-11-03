@@ -127,4 +127,18 @@ ADD CONSTRAINT `id_`
 
 // Colocando chave estrangeira dentro da internação (Chaves Médico e Paciente).
 
+ALTER TABLE `hospital`.`internacao` 
+ADD CONSTRAINT `id_paciente`
+  FOREIGN KEY (`id_paciente`)
+  REFERENCES `hospital`.`pacientes` (`id_paciente`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `id_medico`
+  FOREIGN KEY (`id_medico`)
+  REFERENCES `hospital`.`medicos` (`idmedico`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+// Registrando sete internações
+
 
