@@ -1,4 +1,4 @@
-// alimentando a tabela Medicos com 10 Medicos 
+// alimentando a tabela Medicos com 10 Medicos  
 
 INSERT INTO `hospital`.`medicos` (`idmedico`, `id_especialista`, `nome`, `data_nasccimento`, `id_endereço`, `salario`, `estado_civil`, `cpf`, `rg`, `email`, `inicio_contrato`, `fim_contrato`) VALUES ('1', '10', 'Karina Mantovani', '1999-12-18', '2', '4500', 'solteiro', '25697136589', '25697136', 'vaniKari@gmail.com', '2023-10-12', '2024-10-12');
 INSERT INTO `hospital`.`medicos` (`idmedico`, `id_especialista`, `nome`, `data_nasccimento`, `id_endereço`, `salario`, `estado_civil`, `cpf`, `rg`, `email`, `inicio_contrato`, `fim_contrato`) VALUES ('2', '9', 'Lucas Braga', '1998-11-17', '3', '4530', 'casado', '25697136589', '35687179', 'ragaLuca@gmail.com', '2022-09-11', '2025-09-11');
@@ -141,4 +141,11 @@ ADD CONSTRAINT `id_medico`
 
 // Registrando sete internações
 
-
+INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('1', '2015-01-01', '2015-02-28', '2015-01-28', 'cirurgia érnia de disco', '1', '10', '1', '1');
+INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('2', '2017-01-01', '2017-01-10', '2017-01-15', 'tratamento glicose', '2', '9', '2', '2');
+INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('3', '2016-01-09', '2016-01-15', '2016-01-22', 'cirurgia ocular', '3', '10', '3', '3');
+INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('4', '2019-10-01', '2019-10-10', '2019-10-10', 'cirurgia estomacal', '4', '8', '4', '4');
+INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('5', '2022-01-01', '2022-01-09', '2022-01-08', 'cirurgia ocular', '5', '8', '5', '5');
+INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('6', '2020-09-30', '2020-09-31', '2020-10-01', 'cirurgia dentária', '6', '10', '6', '6');
+INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('7', '2017-08-22', '2017-08-27', '2017-08-25', 'cirurgia ocular', '7', '10', '7', '7');
+INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('8', '2015-01-28', '2015-02-03', '2015-02-03', 'cranotomia', '8', '10', '8', '8');
