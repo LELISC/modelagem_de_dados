@@ -139,7 +139,7 @@ ADD CONSTRAINT `id_medico`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 
-// Registrando sete internações
+// Registrando no minimo sete internações
 
 INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('1', '2015-01-01', '2015-02-28', '2015-01-28', 'cirurgia érnia de disco', '1', '10', '1', '1');
 INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('2', '2017-01-01', '2017-01-10', '2017-01-15', 'tratamento glicose', '2', '9', '2', '2');
