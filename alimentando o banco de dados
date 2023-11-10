@@ -139,7 +139,7 @@ ADD CONSTRAINT `id_medico`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 
-// Registrando no minimo sete internações
+// Registrando no mínimo sete internações
 
 INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('1', '2015-01-01', '2015-02-28', '2015-01-28', 'cirurgia érnia de disco', '1', '10', '1', '1');
 INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('2', '2017-01-01', '2017-01-10', '2017-01-15', 'tratamento glicose', '2', '9', '2', '2');
@@ -149,3 +149,35 @@ INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_pe
 INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('6', '2020-09-30', '2020-09-31', '2020-10-01', 'cirurgia dentária', '6', '10', '6', '6');
 INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('7', '2017-08-22', '2017-08-27', '2017-08-25', 'cirurgia ocular', '7', '10', '7', '7');
 INSERT INTO `hospital`.`internacao` (`idinternacao`, `data_internacao`, `data_perv_alta`, `data_alta`, `procedimento`, `id_paciente`, `id_medico`, `id_enfermeiro`, `id_quarto`) VALUES ('8', '2015-01-28', '2015-02-03', '2015-02-03', 'cranotomia', '8', '10', '8', '8');
+
+//  incluindo ao menos três tipos de apartamentos, quartos duplos ou enfermaria com valores diferentes.
+
+INSERT INTO `hospital`.`aposentos` (`idaaposentos`, `tipo_aposentol`, `status_aposento`) VALUES ('1', 'quarto duplo', 'disponivel');
+INSERT INTO `hospital`.`aposentos` (`idaaposentos`, `tipo_aposentol`, `status_aposento`) VALUES ('2', 'enfermaria', 'disponivel');
+INSERT INTO `hospital`.`aposentos` (`idaaposentos`, `tipo_aposentol`, `status_aposento`) VALUES ('3', 'apartamento', 'disponivel(2 salas)');
+
+// incluiondo ao menos 10 profissionais de enfermaria
+
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('1', 'Flavio Lopes', '52451785A', '92345678123');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('2', 'Bruno Nascimento', '52451775B', '92345678113');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('3', 'Maria Julia', '52451765C', '92345678103');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('4', 'Gabriel Junior', '52451755D', '92345678093');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('5', 'Camila Santos', '52451745E', '92345678083');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('6', 'Eliana Neves', '52451735F', '92345678073');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('7', 'Mariana Joquebede', '52451725G', '92345678063');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('8', 'Julia Lima', '52451715H', '92345678053');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('9', 'Pedro kimberlin', '52451705I', '92345678043');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('10', 'Stella Marcin', '52451695J', '92345678033');
+INSERT INTO `hospital`.`enfermeiro` (`idenfermeiro`, `nome`, `RG`, `CPF`) VALUES ('11', 'Junior Ribeiro', '52451685K', '92345678023');
+
+// Associando cada internação a ao menos dois enfermeiros.
+
+UPDATE `hospital`.`internacao` SET `id_enfermeiro` = '1', `id_enfermeiro_2` = '2' WHERE (`idinternacao` = '1');
+UPDATE `hospital`.`internacao` SET `id_enfermeiro` = '3', `id_enfermeiro_2` = '4' WHERE (`idinternacao` = '2');
+UPDATE `hospital`.`internacao` SET `id_enfermeiro` = '5', `id_enfermeiro_2` = '6' WHERE (`idinternacao` = '3');
+UPDATE `hospital`.`internacao` SET `id_enfermeiro` = '7', `id_enfermeiro_2` = '8' WHERE (`idinternacao` = '4');
+UPDATE `hospital`.`internacao` SET `id_enfermeiro` = '9', `id_enfermeiro_2` = '10' WHERE (`idinternacao` = '5');
+UPDATE `hospital`.`internacao` SET `id_enfermeiro` = '10', `id_enfermeiro_2` = '11' WHERE (`idinternacao` = '6');
+UPDATE `hospital`.`internacao` SET `id_enfermeiro` = '1', `id_enfermeiro_2` = '2' WHERE (`idinternacao` = '7');
+UPDATE `hospital`.`internacao` SET `id_enfermeiro` = '3', `id_enfermeiro_2` = '4' WHERE (`idinternacao` = '8');
+
