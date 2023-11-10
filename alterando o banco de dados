@@ -1,1 +1,24 @@
-teste
+// criando uma coluna 'em atividade' 
+
+ALTER TABLE `hospital`.`medicos` 
+ADD COLUMN `em_atividade` VARCHAR(45) NULL AFTER `fim_contrato`;
+
+// incluindo informação se em atividade ou não 
+
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '1');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '2');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'não' WHERE (`idmedico` = '3');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '4');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '5');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '6');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '7');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '8');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '9');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'sim' WHERE (`idmedico` = '10');
+
+
+// atualizando a tabela para colocar 2 como inativos e o restante em atividade
+
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'não' WHERE (`idmedico` = '8');
+UPDATE `hospital`.`medicos` SET `em_atividade` = 'não' WHERE (`idmedico` = '9');
+
