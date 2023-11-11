@@ -1,0 +1,35 @@
+// consulta 1 (para saber quais são os que medicos eu tenho em atividade com mais de 33 anos)
+
+select * from hospital.medicos 
+
+where data_nascimento >= 1990-01-01 and em_atividade = 'sim'
+
+// consulta 2 (para saber quais consultas eu tive que tiveram a mesma receita)
+
+select * from hospital.consultas
+
+where id_receita in (20,21,22)
+
+// consulta 3 (para saber qual o convenio de cada paciente pelo nome, ordenando pelo convenio)
+
+select nome_paciente,convenio from hospital.pacientes
+
+order by convenio
+
+//consulta 4 (trazer quais pacientes tiveram mais de uma consulta consulta)
+
+select 
+id_paciente,
+count(id_paciente) as 'quantidade consultas'
+from hospital.consultas
+
+group by id_paciente
+having count(id_paciente) >= '2'
+
+
+
+
+
+
+
+
