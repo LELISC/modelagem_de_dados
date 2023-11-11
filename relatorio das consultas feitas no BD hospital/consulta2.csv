@@ -1,0 +1,4 @@
+id_consultas,data_consulta,id_medico,id_paciente,numero_carteira,diagnostico_paciente,id_receita,hora_inicio_consulta,hora_fim_consulta
+1,2015-07-22,1,1,123456,"rinite alérgica",20,16:30:00,17:00:00
+2,2015-07-24,2,2,7891011,"dermatite atópica",21,17:00:00,18:00:00
+3,2017-07-22,3,3,15658566,laringite,22,12:30:00,13:00:00
