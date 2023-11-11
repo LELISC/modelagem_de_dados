@@ -16,7 +16,7 @@ select nome_paciente,convenio from hospital.pacientes
 
 order by convenio
 
-//consulta 4 (trazer quais pacientes tiveram mais de uma consulta consulta)
+//consulta 4 (trazer quais pacientes tiveram mais de uma consulta)
 
 select 
 id_paciente,
@@ -26,6 +26,20 @@ from hospital.consultas
 group by id_paciente
 having count(id_paciente) >= '2'
 
+
+// consulta 5((para trazer email de pacientes que foram internados e tiveram alta no periodo de 2015 há 2020 e enviar pesquisa de satisfação)
+
+select
+tb1.id_paciente,
+tb1.email as 'email paciente',
+tb2.data_internacao,
+tb2.data_alta
+from hospital.pacientes  as tb1
+left join hospital.internacao as tb2
+on tb1.id_paciente = tb2.id_paciente 
+where tb2.data_alta between '2015-01-01' and '2020-12-30'
+
+order by id_paciente
 
 
 
